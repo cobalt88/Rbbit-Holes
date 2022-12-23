@@ -1,5 +1,6 @@
 # Route Map
-
+In the interest of making this map more human-readable the example urls's are all written out to reflect the test environment, not the production environment, since thats where this information is most likely to be referenced. To test any of these routes in the production environment replace localhost:3010 with the deployment URL.</br>
+all routes in this document have been tested and verified as fully functional. 
 * **Default Route:**</br>
     Expected response: Renders Home Page</br>
     Method: GET</br>
@@ -32,6 +33,30 @@
     Expected Response: all tags associated with comments and the comments data </br>
     Method: GET <br>
     URL: http://localhost:3010/tag/post </br>
+
+    note: create comment/post - tag correlation routes do not log which user adds the tags at this time. Currently it will only log the time it was created.
+
+* **Create new post-tag correlation:** </br>
+    Request Requirements: JSON: post_id, tag_id </br>
+    Expected Response: new post-tag relationship data </br>
+    Method: POST <br>
+    URL: http://localhost:3010/tag/post </br>
+    Example Request Body: </br>
+      ```{
+	      "tag_id": 1,
+	      "post_id": 10
+      }```
+
+* **Create new comment-tag correlation:** </br>
+    Request Requirements: JSON: post_id, tag_id </br>
+    Expected Response: new post-tag relationship data </br>
+    Method: POST <br>
+    URL: http://localhost:3010/tag/comment </br>
+    Example Request Body: </br>
+      ```{
+	      "tag_id": 1,
+	      "comment_id": 10
+      }```
 
 
 ### Post Routes
@@ -98,6 +123,36 @@
     URL: http://localhost:3010/post/:id </br>
     Example: http://localhost:3010/post/1 </br>
 
+
+### Comment Routes
+
+* **Get all comments:** </br>
+    Request Requirements: none </br>
+    Expected Response: json object of all comments with user, tag, and post data. </br>
+    Method: GET <br>
+    URL: http://localhost:3010/comments </br>
+    Example: "" </br>
+
+* **Get comments by user ID:** </br>
+    Request Requirements: "" </br>
+    Expected Response: "" </br>
+    Method: "" <br>
+    URL: "" </br>
+    Example: "" </br>
+
+* **Edit a comment:** </br>
+    Request Requirements: "" </br>
+    Expected Response: "" </br>
+    Method: "" <br>
+    URL: "" </br>
+    Example: "" </br>
+
+* **Delete a comment:** </br>
+    Request Requirements: "" </br>
+    Expected Response: "" </br>
+    Method: "" <br>
+    URL: "" </br>
+    Example: "" </br>
 
 
 ### Login Routes

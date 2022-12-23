@@ -1,4 +1,3 @@
-
 const router = require('express').Router();
 const { request } = require('http');
 const { isNull } = require('lodash');
@@ -17,11 +16,12 @@ POST ROUTES | NO-AUTHENTICATION | SEARCH POSTS
 router.get("/create", async (req, res) => {
   try {
     res.status(200).render("create-post-page", {
-      pageTitle: "Test Post-Page",
+      pageTitle: "Create Post - Rabbit Hole",
       mainCSS: true,
       mainJS: true,
       userNav: true,
-      createPostCSS: true
+      createPostCSS: true,
+      loggedIn: true
     });
   } catch (err) {
     res.status(400).json(`Error encountered in test-post route: ${err}`);
@@ -136,6 +136,8 @@ router.get("/view/:id", async (req, res) => {
         'post_id',
         'post_title',
         'post_content',
+        'created_at',
+        'updated_at'
       ],
       include: [
         {
@@ -169,12 +171,20 @@ router.get("/view/:id", async (req, res) => {
 
     const username = postData.dataValues.user.username;
     const comments = postData.comments.map(comment => comment.get({ plain: true }));
+    const post = postData.get({ plain: true });
+    const post_id = postId;
+    const postTitle = postData.dataValues.post_title;
+    
+
+    console.log('------------------------');
+    console.log(post);
 
     res.status(200).render('post-page', {
-      postData,
+      post,
+      post_id,
       username,
       comments,
-      pageTitle: `view-post`,
+      pageTitle: `${postTitle} - Rabbit Hole`,
       loggedIn: req.session.loggedIn,
       userNav: true,
       mainCSS: true,
@@ -302,7 +312,7 @@ router.post('/', async(req, res) => {
         post_title: req.body.post_title,
         post_content: req.body.post_content,
         category_id: req.body.category_id,
-        user_id: req.body.user_id
+        user_id: req.session.user_id
       });
 
     res.status(200).json(`New post successfully created. ${newPost}`)

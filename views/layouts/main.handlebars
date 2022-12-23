@@ -27,7 +27,7 @@
   <body>
 
     {{#if userNav}}
-      {{> userNav }}
+      {{> user_nav }}
     {{/if}}
 
     {{#if adminNav}}
@@ -73,6 +73,10 @@
 
   {{#if mainJS }}
     <script src="/javascript/main.js"></script>
+  {{/if}}
+
+  {{#if registerJS }}
+    <script src="/javascript/register.js"></script>
   {{/if}}
 
 
