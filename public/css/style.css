@@ -1,55 +1,64 @@
 #post-col {
-    border-width: 1px;
-    border-right-style: solid;
-    border-left-style: solid;
+  border-width: 1px;
+  border-right-style: solid;
+  border-left-style: solid;
 }
 
 button {
-    margin: 2px;
+  margin: 2px;
 }
 
 h2 {
-    font-size:x-large
+  font-size: x-large;
 }
 
 h3 {
-    font-size: medium;
+  font-size: medium;
 }
 
 ul {
-    list-style-type: none;
-    margin: 0;
-    padding: 0;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 .hidden {
-    display: none;
+  display: none;
 }
 
 .post-content {
-    min-height: 150px;
-    max-height: 225px;
+  min-height: 150px;
+  max-height: 225px;
 }
 
 li {
-    padding-bottom: 10px;
+  padding-bottom: 10px;
 }
 
 #user-profile-data {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 #interests-list li {
-    padding-bottom: 1px;
+  padding-bottom: 1px;
 }
 
 .side-bar-btn {
-    width: 120px;
-    height: 30px;
-    white-space: nowrap;
-    text-align: center;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    font-size: 14px;
-    margin-bottom: 10px;
+  width: 120px;
+  height: 30px;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+#tag-dataList {
+  margin-right: 15px;
+}
+
+#tags-dropdown-label {
+  margin-right: 10px;
+  margin-top: 5px;
 }

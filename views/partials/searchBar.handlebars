@@ -1,6 +1,6 @@
 <div class="d-flex">
 
-    <label for="tag-dataList" class="form-label">Tags:</label>
+    <label for="tag-dataList" class="form-label" id="tags-dropdown-label">Tags:</label>
     <input class="form-control-sm" list="tag-list" id="tag-dataList" style="font-size: 10px" placeholder="">
         <datalist id="tag-list">
             {{#each tags as |tag|}}
@@ -11,7 +11,7 @@
     <form class="d-flex justify-content-end">
         <input
             type="search"
-            class="form-control rounded"
+            class="form-control rounded input-field"
             placeholder="Search"
             id="searchBar"
             aria-label="Search"
